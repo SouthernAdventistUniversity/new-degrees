@@ -1,0 +1,18 @@
+<div class="title">Suggested
+    <b>Courses</b>
+</div>
+<div class="course-container">
+    <div class="years" ng-class="{active:key==yearNumber}" ng-repeat="(key, semester) in $ctrl.courses" ng-click="$parent.yearNumber = key">YEAR {{key + 1}}</div>
+    <div class="flex">
+        <div class="courses" ng-repeat="(semester, courses) in $ctrl.courses[yearNumber] | orderBy: orderSemesters">
+            <div class="course" ng-repeat="(key, course) in courses">
+                <div class="semester-title">{{key}}</div>
+                <div class="semester-course" ng-repeat="core in course">
+                    <div class="course-class" ng-repeat="class in core">
+                        {{class.description}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

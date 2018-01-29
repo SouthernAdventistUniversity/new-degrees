@@ -1,0 +1,96 @@
+.filter-container
+    padding: 0 8vw
+    display: flex
+    justify-content: space-between
+    margin-bottom: 40px
+    .input-holder
+        display: flex
+        flex: 1
+        flex-direction: column
+        align-items: stretch
+        max-width: 40%
+        .text
+            font-size: 14px
+            font-weight: 400
+            line-height: 1.3
+            color: #000
+        .program-holder
+            margin-top: 20px
+            user-select: none
+            position: relative
+            .program-viewer
+                background: #ced725
+                padding: 14px 42px 14px 9px
+                color: #fff
+                text-transform: uppercase
+                font-weight: 700
+                font-size: 15px
+                text-overflow: ellipsis
+                white-space: nowrap
+                overflow: hidden
+                cursor: pointer
+                position: relative
+                &:hover
+                    background: #c3cc23
+                &.closed:after
+                    content: ""
+                    width: 10px
+                    height: 10px
+                    position: absolute
+                    right: 20px
+                    border-right: 2px solid #fff
+                    border-bottom: 2px solid #fff
+                    transform: rotate(45deg)
+                    margin-top: 5px
+                &.open:after
+                    content: "\00d7"
+                    position: absolute
+                    right: 16px
+                    font-size: 30px
+                    margin-top: -11px
+                    color: #0b652c
+                .active-program
+                    display: inline
+            .program-list
+                box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12)
+                background: #fff
+                position: absolute
+                width: 100%
+                z-index: 10
+                max-height: 400px
+                overflow: auto
+                .program
+                    display: flex
+                    justify-content: flex-start
+                    align-items: center
+                    padding: 12px 17px
+                    cursor: pointer
+                    &:hover, &:focus
+                        background: #f9f9f9
+                    .square
+                        width: 20px
+                        height: 20px
+                        border: 2px solid rgba(0,0,0,0.54)
+                        border-radius: 2px
+                        margin-right: 12px
+                        position: relative
+                        &.active:after
+                            box-sizing: border-box
+                            -webkit-transform: rotate(45deg)
+                            transform: rotate(45deg)
+                            position: absolute
+                            left: 4.66667px
+                            top: 0.22222px
+                            display: table
+                            width: 6.66667px
+                            height: 13.33333px
+                            border-width: 2px
+                            border-style: solid
+                            border-top: 0
+                            border-left: 0
+                            content: ''
+
+                    .text
+                        color: rgba(33,33,33,0.87)
+                        font-size: 15px
+                        font-family: Open Sans

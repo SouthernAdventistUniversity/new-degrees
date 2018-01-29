@@ -1,0 +1,53 @@
+courses
+    font-family: Neue Helvetica
+    .title
+        font-size: 24px
+        line-height: 65px
+        text-transform: uppercase
+        font-weight: 300
+        margin-top: 30px
+    .course-container
+        margin-top: 12px
+        .years
+            background: #EFEEED
+            display: inline-block
+            height: 42px
+            border: 1px solid #DFDDDB
+            font-family: Open Sans
+            font-weight: bold
+            font-size: 16px
+            color: #878585
+            padding: 8px 26px
+            margin: 0 -1px
+            position: relative
+            cursor: pointer
+            user-select: none
+            &.active,
+                background: #263F6A
+                color: #fff
+                &:after
+                    content: ""
+                    position: absolute
+                    width: 8px
+                    height: 8px
+                    background: #263F6A
+                    bottom: -4px
+                    left: calc(50% - 4px)
+                    transform: rotate(45deg)
+        .flex
+            display: flex
+            .courses
+                .course
+                    .semester-title
+                        background: #DFDDDB
+                        color: #878585
+                        padding: 13px 29px
+                        text-transform: uppercase
+                        font-family: Open Sans
+                        font-weight: bold
+                    .semester-course
+                        .course-class
+                            padding: 16px 31px
+                            &:nth-child(2n+1)
+                                background: #EFEEED
+                

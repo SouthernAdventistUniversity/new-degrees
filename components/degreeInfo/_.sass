@@ -1,0 +1,21 @@
+.degreeInfo-container
+    position: fixed
+    top: 0
+    right: 0
+    height: 100%
+    transform: translateX(100%)
+    z-index: 99999
+    transition: .3s transform ease-out
+    display: flex
+    justify-content: flex-end
+    &.active
+        transform: translateX(0)
+    .info-holder
+        height: 100%
+        background: #ffffff
+        z-index: 99999
+        box-shadow: 0 0 5px 0 rgba(0,0,0,.5)
+        padding: 67px
+        box-sizing: border-box
+        max-width: 800px
+        overflow: auto

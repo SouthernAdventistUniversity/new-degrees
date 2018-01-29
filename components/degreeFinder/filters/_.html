@@ -1,0 +1,39 @@
+<div class="filter-container">
+    <div class="left input-holder">
+        <div class="text">Program Level</div>
+        <div class="program-holder">
+            <div class="program-viewer" ng-class="{closed:!isProgramOpen, open:isProgramOpen}" ng-click="isProgramOpen = !isProgramOpen; isSchoolOpen = false">
+                <div class="active-program" ng-repeat="program in $root.activePrograms" ng-show="$root.activePrograms.length">{{!$last ? program + ', ' : program}}</div>
+                <div class="active-program" ng-show="!$root.activePrograms.length">Select a Program</div>
+            </div>
+            <div class="program-list" ng-show="isProgramOpen">
+                <div class="program" ng-repeat="program in programs_list" ng-click="modifyActivePrograms(program)">
+                    <div class="square" ng-class="{active:$root.activePrograms.indexOf(program) > -1}">
+                    </div>
+                    <div class="text">{{program}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right input-holder">
+        <div class="text">Area of Study</div>
+        <div class="program-holder">
+            <div class="program-viewer" ng-class="{closed:!isSchoolOpen, open:isSchoolOpen}" ng-click="isSchoolOpen = !isSchoolOpen; isProgramOpen = false">
+                <div class="active-program" ng-repeat="program in $root.activeSchools" ng-show="$root.activeSchools.length">{{!$last ? program + ', ' : program}}</div>
+                <div class="active-program" ng-show="!$root.activeSchools.length">Select a School</div>
+            </div>
+            <div class="program-list" ng-show="isSchoolOpen">
+                <div class="program" ng-click="modifyActiveSchools('All Schools')">
+                    <div class="square" ng-class="{active:$root.activeSchools.indexOf('All Schools') > -1}">
+                    </div>
+                    <div class="text">All Schools</div>
+                </div>
+                <div class="program" ng-repeat="area in schools" ng-click="modifyActiveSchools(area)">
+                    <div class="square" ng-class="{active:$root.activeSchools.indexOf(area) > -1}">
+                    </div>
+                    <div class="text">{{area}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

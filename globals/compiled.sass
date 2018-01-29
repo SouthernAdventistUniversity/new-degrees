@@ -1,0 +1,38 @@
+body
+    background: #fdfdfd
+    padding-bottom: 768px
+    font-family: Open Sans
+    &.degreeOpen
+        overflow: hidden
+    .background
+        background: rgba(255, 255, 255, 0.51)
+        position: fixed
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 15
+        opacity: 0
+        transition: .2s opacity ease-out
+        &.active
+            opacity: 1
+
+
+// Header
+
+@import ../components/mainHeader/_
+
+// Degree Finder
+
+@import ../components/degreeFinder/header/_
+@import ../components/degreeFinder/filters/_
+@import ../components/degreeFinder/list/_
+@import ../components/degreeFinder/pagination/_
+
+// Degree Info
+
+@import ../components/degreeInfo/_
+@import ../components/degreeInfo/summary/_
+@import ../components/degreeInfo/courses/_
+
+@import ../components/degreeInfo/faculty/_

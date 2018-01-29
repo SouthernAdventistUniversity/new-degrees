@@ -1,0 +1,63 @@
+// .list-container
+//     padding: 0 8vw
+//     .degree
+//         border-top: 2px solid #dcdcdc
+//         padding: 27px 0
+//         cursor: pointer
+//         .title
+//             font-weight: 600
+//             font-size: 20px
+//         .school
+//             font-size: 14px
+//             font-family: Sorts Mill Goudy
+
+
+
+
+
+
+.list-container
+    padding: 0 8vw
+    display: flex
+    flex-wrap: wrap
+    .degree
+        padding: 20px 27px
+        cursor: pointer
+        background: #ffffff
+        flex: 1 auto
+        margin: 0 -2px -2px 0
+        position: relative
+        max-width: 50%
+        border: 2px solid #f1f1f1
+        display: flex
+        flex-direction: column
+        justify-content: center
+        user-select: none
+        transition: opacity .3s ease-out, transform .3s ease-out, border .3s ease-out
+        &:hover
+            background: #fcfcfc
+        &:active
+            top: 1px
+            box-shadow: none
+        &.ng-enter
+            opacity: 0
+            transform: translateY(-10px)
+            border: 2px solid green
+            z-index: 5
+        &.ng-enter-active
+            opacity: 1
+            transform: translateY(0px)
+            z-index: 5
+        &.ng-leave
+            opacity: 1
+            transform: translateY(0px)
+            border: 2px solid red
+        &.ng-leave-active
+            opacity: 0
+            transform: translateY(10px)
+        .title
+            font-weight: 600
+            font-size: 15px
+        .school
+            font-size: 14px
+            font-family: Sorts Mill Goudy

@@ -1,0 +1,45 @@
+faculty
+    font-family: Neue Helvetica
+    .title
+        font-size: 24px
+        line-height: 65px
+        text-transform: uppercase
+        font-weight: 300
+        margin-top: 30px
+    .faculty-container
+        display: flex
+        flex-wrap: wrap
+        justify-content: flex-start
+        align-items: flex-start
+        .faculty
+            width: 170px
+            height: 200px
+            background-size: cover !important
+            margin: 20px 20px 0px 0px
+            filter: grayscale(100%)
+            cursor: pointer
+            transition: .2s filter ease-out
+            &:hover
+                filter: grayscale(0%)
+        .if-container
+            .faculty-ratio
+                background: #6F2C3E
+                color: #FADA63
+                width: 170px
+                height: 200px
+                margin: 20px 20px 0px 0px
+                font-family: Open Sans
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                text-align: center
+                .ratio
+                    font-size: 72px
+                    font-weight: bold
+                    line-height: 98px
+                .text
+                    font-size: 16px
+                    font-weight: bold
+                    text-transform: uppercase
+                    line-height: 17px

@@ -1,0 +1,65 @@
+.header-container
+    position: relative
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 40px
+    height: 500px
+    &:before
+        content: ""
+        padding: 50px 0
+        box-sizing: content-box
+        position: absolute
+        top: -100px
+        left: 0
+        background: #fed53d
+        height: 100%
+        width: 100%
+        transform: skewY(-4deg)
+    
+    .left
+        display: flex
+        flex-direction: column
+        position: relative
+        align-items: flex-start
+        .words
+            background: #fff
+            font-size: 100px
+            padding: 0 10px
+            display: inline-block
+            font-family: Neue Helvetica Condensed
+            font-weight: 100
+            text-transform: uppercase
+            &:first-child
+                margin-bottom: 10px
+.apply
+    font-size: 31px
+    font-weight: 300
+    text-align: center
+    position: fixed
+    height: 92px
+    top: calc(50% - 46px)
+    padding: 0 8vw
+    transition: .2s opacity ease-out
+    b
+        color: #184f2c
+    .button-holder
+        display: flex
+        justify-content: center
+        .apply-button
+            border-bottom: 1px solid #184f2c 
+            background: #fff 
+            color: #184f2c
+            padding: 17px 39px
+            display: inline-block
+            font-size: 14px
+            min-height: 43px
+            display: flex
+            justify-content: center
+            align-items: center
+            margin: 50px 25px 0
+            font-weight: 600
+            transition: .2s background ease-out
+            &:hover
+                background: #184f2c 
+                color: #fff

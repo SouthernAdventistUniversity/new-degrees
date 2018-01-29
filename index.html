@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="//southern.edu/_resources-v2/css/fonts-neue.css" />
+    <link rel="stylesheet" href="//southern.edu/_resources-v2/css/fonts-neue-cond.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:400,400i|Open+Sans:300,400,600,700"
+    />
+    <link rel="stylesheet" href="https://www.southern.edu/_resources-v2/framework/dist/css/southern.css" />
+    <link rel="stylesheet" href="globals/compiled.css" />
+</head>
+
+<body ng-app="Degrees" ng-class="{degreeOpen:$root.openDegree}">
+
+    <div class="main-page">
+        <main-header></main-header>
+        <degree-finder></degree-finder>
+    </div>
+
+    <div class="background" ng-class="{active:$root.openDegree}" ng-click="$root.openDegree = false" ng-show="$root.openDegree"></div>
+
+    <degree-info degree-id="$root.activeDegree" ng-if="$root.activeDegree"></degree-info>
+
+
+
+
+
+
+
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="globals/app.js"></script>
+
+    <script src="components/mainHeader/_.js"></script>
+
+    <script src="components/degreeFinder/_.js"></script>
+    <script src="components/degreeFinder/header/_.js"></script>
+    <script src="components/degreeFinder/filters/_.js"></script>
+    <script src="components/degreeFinder/list/_.js"></script>
+
+    <script src="components/degreeInfo/_.js"></script>
+    <script src="components/degreeInfo/summary/_.js"></script>
+    <script src="components/degreeInfo/courses/_.js"></script>
+    <script src="components/degreeInfo/careers/_.js"></script>
+    <script src="components/degreeInfo/faculty/_.js"></script>
+</body>
+
+</html>

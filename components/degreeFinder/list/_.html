@@ -1,0 +1,6 @@
+<div class="list-container">
+    <div class="degree" ng-repeat="degree in filtered_degrees = (degree_list | filter: degreeFilter | orderBy: ['school', 'degree'])" ng-click="openDegree(degree)">
+        <div class="title">{{degree.degree}}</div>
+        <div class="school">{{degree.school}}</div>
+    </div>
+</div>
