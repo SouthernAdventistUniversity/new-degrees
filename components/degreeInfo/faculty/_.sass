@@ -12,35 +12,68 @@ faculty
         justify-content: flex-start
         align-items: flex-start
         .faculty
-            width: 170px
-            height: 170px
+            width: 200px
+            height: 200px
             background-size: cover !important
             background-position-y: -10px
-            margin: 20px 20px 0px 0px
             filter: grayscale(100%)
             cursor: pointer
-            transition: .2s filter ease-out
+            transition: .2s all ease-out
             &:hover
                 filter: grayscale(0%)
         .if-container
+            display: flex
+            max-width: 440px
+            margin-top: 20px
+            background-color: #acacac
+            border-right: 20px solid #fff
+            position: relative
+            .info
+                position: absolute
+                color: #fff
+                bottom: 0
+                right: 0
+                z-index: 1
+                width: 200px
+                height: 68px
+                background: linear-gradient(to bottom, rgba(0,0,0,0), #000)
+                display: flex
+                flex-wrap: wrap
+                align-items: center
+                padding: 16px
+                font-family: Open Sans Condensed
+                font-size: 19px
+                .name
+                    flex: 1 auto
+                    line-height: 14px
+                    font-weight: bold
+                    min-width: 100%
+                    overflow: hidden
+                    text-overflow: ellipsis
+                    white-space: nowrap
+                .position-title
+                    overflow: hidden
+                    text-overflow: ellipsis
+                    white-space: nowrap
             .faculty-ratio
                 background: #6F2C3E
                 color: #FADA63
-                width: 170px
+                width: 220px
                 height: 200px
-                margin: 20px 20px 0px 0px
                 font-family: Open Sans
                 display: flex
                 flex-direction: column
                 justify-content: center
                 align-items: center
                 text-align: center
+                padding: 20px
+                border-right: 20px solid #fff
                 .ratio
-                    font-size: 72px
+                    font-size: 63px
                     font-weight: bold
-                    line-height: 98px
+                    line-height: 83px
                 .text
-                    font-size: 16px
+                    font-size: 15px
                     font-weight: bold
                     text-transform: uppercase
                     line-height: 17px
