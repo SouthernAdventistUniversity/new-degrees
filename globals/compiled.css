@@ -1,8 +1,9 @@
 @charset "UTF-8";
 body {
   background: #f9f9f9;
-  padding-bottom: 768px;
   font-family: Open Sans; }
+  body .padding-bottom {
+    padding-bottom: 80vh; }
   body.degreeOpen {
     overflow: hidden; }
   body .background {
@@ -193,7 +194,7 @@ body {
               -webkit-transform: rotate(45deg);
               transform: rotate(45deg);
               position: absolute;
-              left: 4.66667px;
+              left: 5.66667px;
               top: 0.22222px;
               display: table;
               width: 6.66667px;
@@ -382,11 +383,12 @@ faculty {
         flex-wrap: wrap;
         align-items: center;
         padding: 16px;
-        font-family: Open Sans Condensed;
-        font-size: 19px; }
+        font-family: Neue Helvetica Condensed;
+        font-size: 19px;
+        pointer-events: none; }
         faculty .faculty-container .if-container .info .name {
           flex: 1 auto;
-          line-height: 14px;
+          line-height: 1em;
           font-weight: bold;
           min-width: 100%;
           overflow: hidden;

@@ -14,6 +14,7 @@
             controllerAs: '$ctrl',
             bindings: {
                 courses: '=',
+                yearNumber: '='
             },
         });
 
@@ -21,15 +22,12 @@
     function CoursesController($scope) {
         const $ctrl = this;
         const semesterOrder = ["fall", "summer", "winter"]
+    
         
-        $scope.yearNumber = 0
         
         /////////////////////////////
 
-        $scope.orderSemesters = semester => {
-            return semesterOrder.findIndex(n => n == Object.keys(semester)[0].toLowerCase())
-            
-        }
+        $scope.orderSemesters = semester => semesterOrder.findIndex(n => n == Object.keys(semester)[0].toLowerCase())
 
     }
 })();

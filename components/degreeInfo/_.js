@@ -20,7 +20,7 @@
     DegreeInfoController.$inject = ['$scope', '$http'];
     function DegreeInfoController($scope, $http) {
         const $ctrl = this;
-        const courseYears = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth']
+        const courseYears = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh']
 
         $scope.$watch(() => $ctrl.degreeId, degree => {
             if (degree) {
@@ -33,6 +33,9 @@
         })
 
         const getSummaryAndCourses = degree => {
+            $scope.courses = {};
+            $scope.summary = '';
+            $scope.yearNumber = 0
             $http.get('http://www.southern.edu/course-sequences/' + degree.id + '.json').then(function (e) {
                 $scope.summary = e.data.description
                 let courses = [];
@@ -60,6 +63,7 @@
         }
 
         const getFaculty = degree => {
+            $scope.faculty = {};
             $http.get('http://www.southern.edu/api/people-search/' + degree.school + '/prof_by_area').then(res => {
                 let response = res.data;
                 Object.keys(response).forEach(email => response[email].Bio = decodeHtml(response[email].Bio)); 
@@ -69,6 +73,7 @@
         }
 
         const getFacultyStudentRatio = degree => {
+            $scope.ratio = 0;
             $http.get('http://staging.southern.edu/fts?department=' + degree.school.replace("School of", "").replace("Allied Health", "Biology") + '&term=Fall%202016').then(res => {
                 $scope.ratio = Math.floor(res.data);
                 console.log($scope.ratio)
