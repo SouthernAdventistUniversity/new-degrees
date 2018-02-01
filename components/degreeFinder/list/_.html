@@ -1,5 +1,5 @@
 <div class="list-container">
-    <div class="container" ng-repeat="school in schools | orderBy: '+'">
+    <div class="container" ng-repeat="school in schools | orderBy: '+' | filter: schoolFilter">
         <div class="main-title">{{school}}</div>
         <div class="degree" ng-if="degree.school == school" ng-repeat="degree in filtered_degrees = (degree_list | filter: degreeFilter | orderBy: ['school', 'degree'])"
             ng-click="openDegree(degree)">

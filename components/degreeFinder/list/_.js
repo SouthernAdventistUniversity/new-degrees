@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     // Usage:
@@ -23,7 +23,7 @@
 
         ///////////////////////////
 
-        $http.get('//staging.southern.edu/departments').then(function(e) {
+        $http.get('//staging.southern.edu/departments').then(function (e) {
             const data = e.data
             const schools = [];
             $scope.degree_list = data;
@@ -37,9 +37,19 @@
         });
 
         $scope.degreeFilter = degree => {
-            if(!!$rootScope.activePrograms.find(program => degree.level.includes(program) || program == "All Programs"))
-                if(!!$rootScope.activeSchools.find(school => degree.school.includes(school) || school == "All Schools"))
+            if (!!$rootScope.activePrograms.find(program => degree.level.includes(program) || program == "All Programs"))
+                if (!!$rootScope.activeSchools.find(school => degree.school.includes(school) || school == "All Schools"))
                     return true
+        }
+
+        $scope.schoolFilter = school => {
+            let check = false;
+            for (let n in $scope.degree_list) {
+                let degree = $scope.degree_list[n]
+                if (!!$rootScope.activeSchools.includes(school) || $rootScope.activeSchools.includes("All Schools"))
+                    if (!!$rootScope.activePrograms.find(program => (degree.level.includes(program) && degree.school == school) || program == "All Programs"))
+                        return true
+            }
         }
 
         $scope.openDegree = degree => {
