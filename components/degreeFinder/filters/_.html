@@ -28,7 +28,7 @@
                     </div>
                     <div class="text">All Schools</div>
                 </div>
-                <div class="program" ng-repeat="area in schools" ng-click="modifyActiveSchools(area)">
+                <div class="program" ng-repeat="area in schools | orderBy: '+'" ng-click="modifyActiveSchools(area)">
                     <div class="square" ng-class="{active:$root.activeSchools.indexOf(area) > -1}">
                     </div>
                     <div class="text">{{area}}</div>

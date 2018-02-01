@@ -213,47 +213,58 @@ body {
   padding: 0 8vw;
   display: flex;
   flex-wrap: wrap; }
-  .list-container .degree {
-    padding: 20px 27px;
-    cursor: pointer;
-    background: #ffffff;
-    flex: 1 auto;
-    margin: 0 -2px -2px 0;
-    position: relative;
-    max-width: 50%;
-    border: 2px solid #f1f1f1;
+  .list-container .container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    user-select: none;
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out, border 0.3s ease-out; }
-    .list-container .degree:hover {
-      background: #fcfcfc; }
-    .list-container .degree:active {
-      top: 1px;
-      box-shadow: none; }
-    .list-container .degree.ng-enter {
-      opacity: 0;
-      transform: translateY(-10px);
-      border: 2px solid green;
-      z-index: 5; }
-    .list-container .degree.ng-enter-active {
-      opacity: 1;
-      transform: translateY(0px);
-      z-index: 5; }
-    .list-container .degree.ng-leave {
-      opacity: 1;
-      transform: translateY(0px);
-      border: 2px solid red; }
-    .list-container .degree.ng-leave-active {
-      opacity: 0;
-      transform: translateY(10px); }
-    .list-container .degree .title {
-      font-weight: 600;
-      font-size: 15px; }
-    .list-container .degree .school {
-      font-size: 14px;
-      font-family: Sorts Mill Goudy; }
+    flex-wrap: wrap;
+    margin-bottom: 58px; }
+    .list-container .container .main-title {
+      flex: 1;
+      min-width: 100%;
+      font-family: Neue Helvetica;
+      font-size: 36px;
+      margin-bottom: 23px;
+      font-weight: 200; }
+    .list-container .container .degree {
+      padding: 20px 27px;
+      cursor: pointer;
+      background: #ffffff;
+      flex: 1 auto;
+      margin: 0 -2px -2px 0;
+      position: relative;
+      max-width: 50%;
+      border: 2px solid #f1f1f1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      user-select: none;
+      transition: opacity 0.3s ease-out, transform 0.3s ease-out, border 0.3s ease-out; }
+      .list-container .container .degree:hover {
+        background: #fcfcfc; }
+      .list-container .container .degree:active {
+        top: 1px;
+        box-shadow: none; }
+      .list-container .container .degree.ng-enter {
+        opacity: 0;
+        transform: translateY(-10px);
+        border: 2px solid green;
+        z-index: 5; }
+      .list-container .container .degree.ng-enter-active {
+        opacity: 1;
+        transform: translateY(0px);
+        z-index: 5; }
+      .list-container .container .degree.ng-leave {
+        opacity: 1;
+        transform: translateY(0px);
+        border: 2px solid red; }
+      .list-container .container .degree.ng-leave-active {
+        opacity: 0;
+        transform: translateY(10px); }
+      .list-container .container .degree .title {
+        font-weight: 600;
+        font-size: 15px; }
+      .list-container .container .degree .school {
+        font-size: 14px;
+        font-family: Sorts Mill Goudy; }
 
 .degreeInfo-container {
   position: fixed;
