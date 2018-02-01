@@ -216,7 +216,9 @@ body {
   .list-container .container {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 58px; }
+    margin-bottom: 58px;
+    flex: 1;
+    min-width: 100%; }
     .list-container .container .main-title {
       flex: 1;
       min-width: 100%;
@@ -237,7 +239,8 @@ body {
       flex-direction: column;
       justify-content: center;
       user-select: none;
-      transition: opacity 0.3s ease-out, transform 0.3s ease-out, border 0.3s ease-out; }
+      transition: opacity 0.3s ease-out, transform 0.3s ease-out, border 0.3s ease-out;
+      position: relative; }
       .list-container .container .degree:hover {
         background: #fcfcfc; }
       .list-container .container .degree:active {
