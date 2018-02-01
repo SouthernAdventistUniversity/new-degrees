@@ -12,6 +12,6 @@
             <div class="ratio">{{$ctrl.ratio}}:1</div>
             <div class="text">Student to Faculty Ratio</div>
         </div>
-        <a ng-href="http://localhost/facultyPage?email={{faculty.Email}}" target="_blank"><img class="faculty animate-show" fade-in src="http://www.southern.edu/api/people-search/imageserver.php?user={{faculty.Email}}&width=170&fs=1"/></a>
+        <a ng-href="http://localhost/facultyPage?email={{faculty.Email.split('@')[0]}}" target="_blank"><img class="faculty animate-show" fade-in src="http://www.southern.edu/api/people-search/imageserver.php?user={{faculty.Email.split('@')[0]}}&width=170&fs=1"/></a>
     </div>
 </div>
