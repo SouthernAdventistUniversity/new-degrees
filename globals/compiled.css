@@ -51,8 +51,8 @@ body {
     align-items: flex-start; }
     .header-container .left .words {
       background: #fff;
-      font-size: 100px;
-      padding: 0 10px;
+      font-size: 7.75rem;
+      padding: 0 35px;
       display: inline-block;
       font-family: Neue Helvetica Condensed;
       font-weight: 100;
@@ -100,7 +100,7 @@ body {
   padding: 0 8vw; }
   .degreeFinderHeader-container .title {
     text-transform: uppercase;
-    font-size: 40px;
+    font-size: 3rem;
     font-family: Neue Helvetica;
     display: flex; }
     .degreeFinderHeader-container .title .main {
@@ -117,7 +117,7 @@ body {
   padding: 0 8vw;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px; }
+  margin: 80px 0 60px; }
   .filter-container .input-holder {
     display: flex;
     flex: 1;
@@ -125,16 +125,17 @@ body {
     align-items: stretch;
     max-width: 32%; }
     .filter-container .input-holder .text {
-      font-size: 14px;
-      font-weight: 400;
+      font-size: 1.5rem;
+      font-weight: 700;
       line-height: 1.3;
+      text-transform: uppercase;
       color: #000; }
     .filter-container .input-holder .program-holder {
       margin-top: 20px;
       user-select: none;
       position: relative; }
       .filter-container .input-holder .program-holder .search-container {
-        background: #ced725;
+        background: #fff;
         padding: 14px 14px 14px 9px;
         color: #fff;
         text-transform: uppercase;
@@ -144,12 +145,13 @@ body {
         white-space: nowrap;
         overflow: hidden;
         cursor: pointer;
-        position: relative; }
+        position: relative;
+        border: 1px solid #b6b6b6; }
         .filter-container .input-holder .program-holder .search-container .search-input {
           border: 0;
           box-shadow: none;
-          background: #ced725;
-          color: #fff;
+          background: transparent;
+          color: #333;
           text-transform: uppercase;
           font-weight: 700;
           font-size: 15px;
@@ -162,7 +164,7 @@ body {
           height: 0;
           padding: 11px; }
           .filter-container .input-holder .program-holder .search-container .search-input::placeholder {
-            color: #fff; }
+            color: #aaa; }
       .filter-container .input-holder .program-holder .program-viewer {
         background: #ced725;
         padding: 14px 42px 14px 9px;
@@ -237,7 +239,9 @@ body {
           .filter-container .input-holder .program-holder .program-list .program .text {
             color: rgba(33, 33, 33, 0.87);
             font-size: 15px;
-            font-family: Open Sans; }
+            font-family: Open Sans;
+            font-weight: 400;
+            text-transform: none; }
 
 .list-container {
   padding: 0 8vw;
@@ -254,16 +258,15 @@ body {
       min-width: 100%;
       font-family: Neue Helvetica;
       font-size: 36px;
-      margin-bottom: 23px;
       font-weight: 200; }
     .list-container .container .degree {
       padding: 20px 27px;
       cursor: pointer;
       background: #ffffff;
       flex: 1 auto;
-      margin: 0 -2px -2px 0;
+      margin: 10px 10px -5px -5px;
       position: relative;
-      max-width: 50%;
+      max-width: 49%;
       border: 2px solid #f1f1f1;
       display: flex;
       flex-direction: column;
