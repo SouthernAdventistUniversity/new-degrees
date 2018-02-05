@@ -25,6 +25,8 @@ body {
     opacity: 0; }
   body .animate-show.ng-hide-add, body .animate-show.ng-hide-remove.ng-hide-remove-active {
     opacity: 1; }
+  body degree-finder {
+    display: block; }
 
 .header-container {
   position: relative;
@@ -412,7 +414,7 @@ courses {
     line-height: 65px;
     text-transform: uppercase;
     font-weight: 300;
-    margin-top: 30px; }
+    margin-top: 60px; }
   courses .course-container {
     margin-top: 12px; }
     courses .course-container .years {
@@ -466,14 +468,15 @@ faculty {
     line-height: 65px;
     text-transform: uppercase;
     font-weight: 300;
-    margin-top: 30px; }
+    margin-top: 60px; }
   faculty .faculty-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
     margin: -20px -20px 0 0;
-    width: calc(100% + 40px); }
+    width: calc(100% + 40px);
+    max-width: 575px; }
     faculty .faculty-container .if-container {
       display: flex;
       background-color: #acacac;
