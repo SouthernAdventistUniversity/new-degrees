@@ -19,15 +19,16 @@
 
     ListController.$inject = ['$scope', '$http', '$rootScope'];
     function ListController($scope, $http, $rootScope) {
+        $rootScope.degreeSearch = ''
 
 
         ///////////////////////////
 
-        $http.get('//staging.southern.edu/departments').then(function (e) {
+        $http.get('//staging.southern.edu/departments').then(e => {
             const data = e.data
             const schools = [];
-            $scope.degree_list = data;
-
+            $rootScope.degree_list = data;
+            console.log($rootScope.degree_list)
             data.forEach(degree => {
                 if (schools.indexOf(degree.school) === -1)
                     schools.push(degree.school);
@@ -35,22 +36,6 @@
             $scope.schools = schools;
             console.log($scope.schools)
         });
-
-        $scope.degreeFilter = degree => {
-            if (!!$rootScope.activePrograms.find(program => degree.level.includes(program) || program == "All Programs"))
-                if (!!$rootScope.activeSchools.find(school => degree.school.includes(school) || school == "All Schools"))
-                    return true
-        }
-
-        $scope.schoolFilter = school => {
-            let check = false;
-            for (let n in $scope.degree_list) {
-                let degree = $scope.degree_list[n]
-                if (!!$rootScope.activeSchools.includes(school) || $rootScope.activeSchools.includes("All Schools"))
-                    if (!!$rootScope.activePrograms.find(program => (degree.level.includes(program) && degree.school == school) || program == "All Programs"))
-                        return true
-            }
-        }
 
         $scope.openDegree = degree => {
             $rootScope.activeDegree = degree;

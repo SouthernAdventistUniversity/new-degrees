@@ -8,7 +8,7 @@
         flex: 1
         flex-direction: column
         align-items: stretch
-        max-width: 40%
+        max-width: 32%
         .text
             font-size: 14px
             font-weight: 400
@@ -18,6 +18,36 @@
             margin-top: 20px
             user-select: none
             position: relative
+            .search-container
+                background: #ced725
+                padding: 14px 14px 14px 9px
+                color: #fff
+                text-transform: uppercase
+                font-weight: 700
+                font-size: 15px
+                text-overflow: ellipsis
+                white-space: nowrap
+                overflow: hidden
+                cursor: pointer
+                position: relative
+                .search-input
+                    border: 0
+                    box-shadow: none
+                    background: #ced725
+                    color: #fff
+                    text-transform: uppercase
+                    font-weight: 700
+                    font-size: 15px
+                    text-overflow: ellipsis
+                    white-space: nowrap
+                    overflow: hidden
+                    cursor: pointer
+                    position: relative
+                    margin: 0
+                    height: 0
+                    padding: 11px
+                    &::placeholder
+                        color: #fff
             .program-viewer
                 background: #ced725
                 padding: 14px 42px 14px 9px

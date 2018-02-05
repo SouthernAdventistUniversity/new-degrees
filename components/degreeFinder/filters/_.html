@@ -15,7 +15,7 @@
             </div>
         </div>
     </div>
-    <div class="right input-holder">
+    <div class="middle input-holder">
         <div class="text">Area of Study</div>
         <div class="program-holder">
             <div class="program-viewer" ng-class="{closed:!isSchoolOpen, open:isSchoolOpen}" ng-click="isSchoolOpen = !isSchoolOpen; isProgramOpen = false">
@@ -33,6 +33,14 @@
                     </div>
                     <div class="text">{{area}}</div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="right input-holder">
+        <div class="text">Search for a degree</div>
+        <div class="program-holder">
+            <div class="search-container">
+                <input class="search-input" ng-model="$root.degreeSearch" placeholder="SEARCH" type="text"></div>
             </div>
         </div>
     </div>

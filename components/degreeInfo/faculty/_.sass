@@ -11,21 +11,12 @@ faculty
         flex-wrap: wrap
         justify-content: flex-start
         align-items: flex-start
-        .faculty
-            width: 200px
-            height: 200px
-            background-size: cover !important
-            background-position-y: -10px
-            filter: grayscale(100%)
-            cursor: pointer
-            transition: .2s all ease-out
-            &:hover
-                filter: grayscale(0%)
+        margin: -20px -20px 0 0
+        width: calc(100% + 40px)
         .if-container
             display: flex
-            max-width: 440px
-            margin-top: 20px
             background-color: #acacac
+            border-top: 20px solid #fff
             border-right: 20px solid #fff
             position: relative
             .info
@@ -34,7 +25,7 @@ faculty
                 bottom: 0
                 right: 0
                 z-index: 1
-                width: 200px
+                width: 100%
                 height: 68px
                 background: linear-gradient(to bottom, rgba(0,0,0,0), #000)
                 display: flex
@@ -56,25 +47,35 @@ faculty
                     overflow: hidden
                     text-overflow: ellipsis
                     white-space: nowrap
-            .faculty-ratio
-                background: #6F2C3E
-                color: #FADA63
-                width: 220px
-                height: 200px
-                font-family: Open Sans
-                display: flex
-                flex-direction: column
-                justify-content: center
-                align-items: center
-                text-align: center
-                padding: 20px
-                border-right: 20px solid #fff
-                .ratio
-                    font-size: 63px
-                    font-weight: bold
-                    line-height: 83px
-                .text
-                    font-size: 15px
-                    font-weight: bold
-                    text-transform: uppercase
-                    line-height: 17px
+            .faculty
+                width: 170px
+                height: 170px
+                background-size: cover !important
+                background-position-y: -10px
+                filter: grayscale(100%)
+                cursor: pointer
+                transition: .2s all ease-out
+                &:hover
+                    filter: grayscale(0%)
+        .faculty-ratio
+            background: #6F2C3E
+            color: #FADA63
+            width: 170px
+            height: 170px
+            font-family: Open Sans
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            text-align: center
+            padding: 20px
+            margin: 20px 20px 0 0
+            .ratio
+                font-size: 63px
+                font-weight: bold
+                line-height: 83px
+            .text
+                font-size: 15px
+                font-weight: bold
+                text-transform: uppercase
+                line-height: 17px

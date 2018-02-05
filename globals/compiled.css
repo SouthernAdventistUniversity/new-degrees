@@ -123,7 +123,7 @@ body {
     flex: 1;
     flex-direction: column;
     align-items: stretch;
-    max-width: 40%; }
+    max-width: 32%; }
     .filter-container .input-holder .text {
       font-size: 14px;
       font-weight: 400;
@@ -133,6 +133,36 @@ body {
       margin-top: 20px;
       user-select: none;
       position: relative; }
+      .filter-container .input-holder .program-holder .search-container {
+        background: #ced725;
+        padding: 14px 14px 14px 9px;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 15px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        cursor: pointer;
+        position: relative; }
+        .filter-container .input-holder .program-holder .search-container .search-input {
+          border: 0;
+          box-shadow: none;
+          background: #ced725;
+          color: #fff;
+          text-transform: uppercase;
+          font-weight: 700;
+          font-size: 15px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          cursor: pointer;
+          position: relative;
+          margin: 0;
+          height: 0;
+          padding: 11px; }
+          .filter-container .input-holder .program-holder .search-container .search-input::placeholder {
+            color: #fff; }
       .filter-container .input-holder .program-holder .program-viewer {
         background: #ced725;
         padding: 14px 42px 14px 9px;
@@ -278,18 +308,86 @@ body {
   z-index: 99999;
   transition: 0.3s transform ease-out;
   display: flex;
-  justify-content: flex-end; }
+  justify-content: flex-end;
+  background: #ffffff;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  width: 90%;
+  overflow: auto; }
   .degreeInfo-container.active {
     transform: translateX(0); }
   .degreeInfo-container .info-holder {
-    height: 100%;
-    background: #ffffff;
-    z-index: 99999;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
-    padding: 67px;
-    box-sizing: border-box;
-    max-width: 800px;
-    overflow: auto; }
+    padding: 67px 367px 67px 67px;
+    overflow: auto;
+    width: 100%; }
+  .degreeInfo-container .main-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    width: 300px; }
+    .degreeInfo-container .main-holder .program-title {
+      background: #FADA63;
+      padding: 47px;
+      font-size: 32px;
+      font-family: Neue Helvetica Condensed;
+      line-height: 1em;
+      font-weight: 300;
+      min-width: 300px; }
+      .degreeInfo-container .main-holder .program-title b {
+        display: block; }
+    .degreeInfo-container .main-holder .suggestion-container {
+      flex: 1;
+      background: #1c5d33;
+      width: 90%;
+      overflow: hidden;
+      position: relative; }
+      .degreeInfo-container .main-holder .suggestion-container .suggestion-top {
+        background: #184F2C;
+        color: #fff;
+        font-family: Neue Helvetica;
+        text-transform: uppercase;
+        padding: 40px 0 0;
+        line-height: 1em;
+        position: absolute;
+        overflow: hidden;
+        height: 100%;
+        display: flex;
+        flex-direction: column; }
+        .degreeInfo-container .main-holder .suggestion-container .suggestion-top .school-other {
+          font-weight: 600;
+          font-size: 12px;
+          margin-bottom: 10px;
+          padding: 0 30px; }
+        .degreeInfo-container .main-holder .suggestion-container .suggestion-top .school-text {
+          padding: 0 30px; }
+        .degreeInfo-container .main-holder .suggestion-container .suggestion-top .school-name {
+          font-weight: 600;
+          color: #CDD73F;
+          padding: 0 30px; }
+        .degreeInfo-container .main-holder .suggestion-container .suggestion-top .suggestion-list {
+          border-top: 1px solid #1d5c34;
+          overflow: auto;
+          flex: 1;
+          padding: 30px 30px 0;
+          margin-top: 30px; }
+          .degreeInfo-container .main-holder .suggestion-container .suggestion-top .suggestion-list .suggestions {
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 24px;
+            opacity: 0.45;
+            line-height: 1.3em;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: none;
+            font-family: Open Sans; }
+            .degreeInfo-container .main-holder .suggestion-container .suggestion-top .suggestion-list .suggestions:hover {
+              opacity: 1; }
+      .degreeInfo-container .main-holder .suggestion-container .suggestion-bottom {
+        padding: 30px; }
 
 summary {
   font-family: Neue Helvetica; }
@@ -319,6 +417,7 @@ courses {
       display: inline-block;
       height: 42px;
       border: 1px solid #DFDDDB;
+      border-bottom: 0;
       font-family: Open Sans;
       font-weight: bold;
       font-size: 16px;
@@ -341,18 +440,21 @@ courses {
           left: calc(50% - 4px);
           transform: rotate(45deg); }
     courses .course-container .flex {
-      display: flex; }
-      courses .course-container .flex .courses .course .semester-title {
-        background: #DFDDDB;
-        color: #878585;
-        padding: 13px 29px;
-        text-transform: uppercase;
-        font-family: Open Sans;
-        font-weight: bold; }
-      courses .course-container .flex .courses .course .semester-course .course-class {
-        padding: 16px 31px; }
-        courses .course-container .flex .courses .course .semester-course .course-class:nth-child(2n+1) {
-          background: #EFEEED; }
+      display: flex;
+      border: 1px solid #DFDDDB; }
+      courses .course-container .flex .courses {
+        flex: 1; }
+        courses .course-container .flex .courses .course .semester-title {
+          background: #DFDDDB;
+          color: #878585;
+          padding: 13px 29px;
+          text-transform: uppercase;
+          font-family: Open Sans;
+          font-weight: bold; }
+        courses .course-container .flex .courses .course .semester-course .course-class {
+          padding: 16px 31px; }
+          courses .course-container .flex .courses .course .semester-course .course-class:nth-child(2n+1) {
+            background: #EFEEED; }
 
 faculty {
   font-family: Neue Helvetica; }
@@ -366,22 +468,13 @@ faculty {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    align-items: flex-start; }
-    faculty .faculty-container .faculty {
-      width: 200px;
-      height: 200px;
-      background-size: cover !important;
-      background-position-y: -10px;
-      filter: grayscale(100%);
-      cursor: pointer;
-      transition: 0.2s all ease-out; }
-      faculty .faculty-container .faculty:hover {
-        filter: grayscale(0%); }
+    align-items: flex-start;
+    margin: -20px -20px 0 0;
+    width: calc(100% + 40px); }
     faculty .faculty-container .if-container {
       display: flex;
-      max-width: 440px;
-      margin-top: 20px;
       background-color: #acacac;
+      border-top: 20px solid #fff;
       border-right: 20px solid #fff;
       position: relative; }
       faculty .faculty-container .if-container .info {
@@ -390,7 +483,7 @@ faculty {
         bottom: 0;
         right: 0;
         z-index: 1;
-        width: 200px;
+        width: 100%;
         height: 68px;
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
         display: flex;
@@ -412,27 +505,37 @@ faculty {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap; }
-      faculty .faculty-container .if-container .faculty-ratio {
-        background: #6F2C3E;
-        color: #FADA63;
-        width: 220px;
-        height: 200px;
-        font-family: Open Sans;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 20px;
-        border-right: 20px solid #fff; }
-        faculty .faculty-container .if-container .faculty-ratio .ratio {
-          font-size: 63px;
-          font-weight: bold;
-          line-height: 83px; }
-        faculty .faculty-container .if-container .faculty-ratio .text {
-          font-size: 15px;
-          font-weight: bold;
-          text-transform: uppercase;
-          line-height: 17px; }
+      faculty .faculty-container .if-container .faculty {
+        width: 170px;
+        height: 170px;
+        background-size: cover !important;
+        background-position-y: -10px;
+        filter: grayscale(100%);
+        cursor: pointer;
+        transition: 0.2s all ease-out; }
+        faculty .faculty-container .if-container .faculty:hover {
+          filter: grayscale(0%); }
+    faculty .faculty-container .faculty-ratio {
+      background: #6F2C3E;
+      color: #FADA63;
+      width: 170px;
+      height: 170px;
+      font-family: Open Sans;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      margin: 20px 20px 0 0; }
+      faculty .faculty-container .faculty-ratio .ratio {
+        font-size: 63px;
+        font-weight: bold;
+        line-height: 83px; }
+      faculty .faculty-container .faculty-ratio .text {
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 17px; }
 
 /*# sourceMappingURL=compiled.css.map */

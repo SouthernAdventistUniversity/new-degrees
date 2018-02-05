@@ -8,14 +8,96 @@
     transition: .3s transform ease-out
     display: flex
     justify-content: flex-end
+    background: #ffffff
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5)
+    box-sizing: border-box
+    width: 90%
+    overflow: auto
     &.active
         transform: translateX(0)
     .info-holder
-        height: 100%
-        background: #ffffff
-        z-index: 99999
-        box-shadow: 0 0 5px 0 rgba(0,0,0,.5)
-        padding: 67px
-        box-sizing: border-box
-        max-width: 800px
+        padding: 67px 367px 67px 67px
         overflow: auto
+        width: 100%
+    .main-holder
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        position: absolute
+        height: 100vh
+        top: 0
+        right: 0
+        width: 300px
+        .program-title
+            background: #FADA63
+            padding: 47px
+            font-size: 32px
+            font-family: Neue Helvetica Condensed
+            line-height: 1em
+            font-weight: 300
+            min-width: 300px
+            b
+                display: block
+        .suggestion-container
+            flex: 1
+            background: #1c5d33
+            width: 90%
+            overflow: hidden
+            position: relative
+            .suggestion-top
+                background: #184F2C
+                color: #fff
+                font-family: Neue Helvetica
+                text-transform: uppercase
+                padding: 40px 0 0
+                line-height: 1em
+                position: absolute
+                overflow: hidden
+                height: 100%
+                display: flex
+                flex-direction: column
+                .school-other
+                    font-weight: 600
+                    font-size: 12px
+                    margin-bottom: 10px
+                    padding: 0 30px
+                .school-text
+                    padding: 0 30px
+                .school-name
+                    font-weight: 600
+                    color: #CDD73F
+                    padding: 0 30px
+                .suggestion-list
+                    border-top: 1px solid #1d5c34
+                    overflow: auto
+                    flex: 1
+                    padding: 30px 30px 0
+                    margin-top: 30px
+                    .suggestions
+                        color: #fff
+                        font-weight: 600
+                        margin-bottom: 24px
+                        opacity: .45
+                        line-height: 1.3em
+                        font-size: 16px
+                        cursor: pointer
+                        text-transform: none
+                        font-family: Open Sans
+                        &:hover
+                            opacity: 1
+            .suggestion-bottom
+                padding: 30px
+                // .suggestion-list
+                //     padding-top: 30px
+                //     margin-top: 30px
+                //     border-top: 1px solid #184F2C
+                //     .suggestions
+                //         color: #fff
+                //         font-weight: 600
+                //         margin-bottom: 24px
+                //         opacity: .45
+                //         line-height: 1.3em
+                //         font-size: 16px
+                //         cursor: pointer
+                //         &:hover
+                //             opacity: 1

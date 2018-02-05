@@ -6,6 +6,26 @@
         <faculty faculty="faculty" ratio="ratio"></faculty>
     </div>
     <div class="main-holder">
-        
+        <div class="program-title">{{degreeLevel ? $ctrl.degreeId.degree.split(degreeLevel)[0] : $ctrl.degreeId.degree}}
+            <b>{{degreeLevel}}</b>
+        </div>
+        <div class="suggestion-container">
+            <div class="suggestion-top">
+                <div class="school-other">Other Programs In</div>
+                <div class="school-text">School Of</div>
+                <div class="school-name">{{$ctrl.degreeId.school}}</div>
+                <div class="suggestion-list">
+                    <div class="suggestions" ng-repeat="degree in $root.degree_list | filter: degreeFilter | orderBy: 'degree'" ng-click="openDegree(degree)">{{degree.degree}}</div>
+                </div>
+            </div>
+            <!-- <div class="suggestion-bottom">
+                <div class="suggestion-filter-container">
+
+                </div>
+                <div class="suggestion-list">
+                    <div class="suggestions" ng-repeat="degree in $root.degree_list | filter: degreeFilter" ng-click="openDegree(degree)">{{degree.degree}}</div>
+                </div>
+            </div> -->
+        </div>
     </div>
 </div>

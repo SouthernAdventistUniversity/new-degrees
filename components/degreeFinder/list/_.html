@@ -1,7 +1,7 @@
 <div class="list-container">
-    <div class="container" ng-repeat="school in schools | orderBy: '+' | filter: schoolFilter">
+    <div class="container" ng-repeat="school in schools | orderBy: '+'" ng-hide="!filtered_degrees.length">
         <div class="main-title">{{school}}</div>
-        <div class="degree" ng-if="degree.school == school" ng-repeat="degree in filtered_degrees = (degree_list | filter: degreeFilter | orderBy: ['school', 'degree'])"
+        <div class="degree" ng-repeat="degree in filtered_degrees = ($root.degree_list | degreeFilter1:school  | orderBy: ['school', 'degree'])"
             ng-click="openDegree(degree)">
             <div class="title">{{degree.degree}}</div>
             <div class="school">{{degree.school}}</div>

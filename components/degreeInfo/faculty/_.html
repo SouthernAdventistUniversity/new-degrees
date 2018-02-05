@@ -3,15 +3,18 @@
 </div>
 
 <div class="faculty-container">
-    <div class="if-container" ng-repeat="faculty in $ctrl.faculty">
+    <div class="if-container" ng-repeat-start="faculty in $ctrl.faculty">
         <div class="info">
             <div class="name">{{faculty.PreferredName}}{{faculty.Credentials ? ', ' + faculty.Credentials : ''}}</div>
             <div class="position-title">{{faculty.PositionTitle}}</div>
         </div>
-        <div class="faculty-ratio" ng-if="$index == 4">
-            <div class="ratio">{{$ctrl.ratio}}:1</div>
-            <div class="text">Student to Faculty Ratio</div>
-        </div>
-        <a ng-href="http://localhost/facultyPage/{{faculty.Email.split('@')[0]}}" target="_blank"><img class="faculty animate-show" fade-in src="http://www.southern.edu/api/people-search/imageserver.php?user={{faculty.Email.split('@')[0]}}&w=170&fs=1"/></a>
+        <a ng-href="http://localhost/facultyPage/{{faculty.Email.split('@')[0]}}" target="_blank">
+            <img class="faculty animate-show" fade-in src="http://www.southern.edu/api/people-search/imageserver.php?user={{faculty.Email.split('@')[0]}}&w=170&fs=1"
+            />
+        </a>
+    </div>
+    <div class="faculty-ratio" ng-repeat-end ng-if="$index == 3">
+        <div class="ratio">{{$ctrl.ratio}}:1</div>
+        <div class="text">Student to Faculty Ratio</div>
     </div>
 </div>

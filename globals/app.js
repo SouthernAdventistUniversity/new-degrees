@@ -4,23 +4,28 @@
     angular.module('Degrees', [
         'ngAnimate'
     ])
-
-        .filter('orderSemesters', semester => {
-            $scope.semesterOrder = ["fall", "summer", "winter"]
-            console.log(semester)
+        .filter('degreeFilter1', $rootScope => (degrees, school) => {
+            const filtered_degrees = []
+            for (let index in degrees) {
+                let degree = degrees[index]
+                if (!!$rootScope.activePrograms.find(program => degree.level.includes(program) || program == "All Programs"))
+                    if (!!$rootScope.activeSchools.find(item => school == item || item == "All Schools") && degree.school == school)
+                        if (degree.degree.toLowerCase().includes($rootScope.degreeSearch.toLowerCase()))
+                            filtered_degrees.push(degree)
+            }
+            return filtered_degrees
         })
-
         .directive('fadeIn', function ($timeout) {
             return {
                 restrict: 'A',
                 link: function ($scope, $element, attrs) {
                     $element.addClass("ng-hide-remove");
-                    console.log("hi")
                     $element.on('load', function () {
-                        console.log("bye")
                         $element.addClass("ng-hide-add");
                     });
                 }
             };
         })
+
+
 })();
