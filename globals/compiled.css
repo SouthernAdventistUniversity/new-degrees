@@ -7,7 +7,7 @@ body {
   body.degreeOpen {
     overflow: hidden; }
   body .background {
-    background: rgba(255, 255, 255, 0.51);
+    background: rgba(0, 0, 0, 0.17);
     position: fixed;
     top: 0;
     left: 0;
@@ -308,22 +308,28 @@ body {
   top: 0;
   right: 0;
   height: 100%;
-  transform: translateX(100%);
+  transform: translateX(calc(100% + 159px));
   z-index: 99999;
   transition: 0.3s transform ease-out;
   display: flex;
   justify-content: flex-end;
   background: #ffffff;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.83);
   box-sizing: border-box;
-  width: 90%;
-  overflow: auto; }
+  width: 90%; }
   .degreeInfo-container.active {
     transform: translateX(0); }
+  .degreeInfo-container .close {
+    position: absolute;
+    left: -63px;
+    width: 222px;
+    top: 20px;
+    cursor: pointer; }
   .degreeInfo-container .info-holder {
-    padding: 67px 515px 67px 67px;
+    padding: 67px 40% 67px 100px;
     overflow: auto;
-    width: 100%; }
+    width: 100%;
+    position: relative; }
   .degreeInfo-container .main-holder {
     display: flex;
     flex-direction: column;
@@ -332,33 +338,33 @@ body {
     height: 100vh;
     top: 0;
     right: 0;
-    width: 400px; }
+    width: 36%; }
     .degreeInfo-container .main-holder .program-title {
       background: #FADA63;
-      padding: 47px;
-      font-size: 32px;
+      padding: 11% 18%;
+      font-size: 48px;
       font-family: Neue Helvetica Condensed;
-      line-height: 1em;
+      line-height: 1.1em;
       font-weight: 300;
-      min-width: 300px; }
+      width: 100%; }
       .degreeInfo-container .main-holder .program-title b {
         display: block; }
     .degreeInfo-container .main-holder .suggestion-container {
       flex: 1;
       background: #1c5d33;
-      width: 90%;
+      width: 82%;
       overflow: hidden;
-      position: relative; }
+      position: relative;
+      display: flex;
+      flex-direction: column; }
       .degreeInfo-container .main-holder .suggestion-container .suggestion-top {
         background: #184F2C;
         color: #fff;
         font-family: Neue Helvetica;
         text-transform: uppercase;
-        padding: 40px 0 0;
+        padding: 25px 0;
         line-height: 1em;
-        position: absolute;
         overflow: hidden;
-        height: 100%;
         display: flex;
         flex-direction: column; }
         .degreeInfo-container .main-holder .suggestion-container .suggestion-top .school-other {
@@ -367,49 +373,63 @@ body {
           margin-bottom: 10px;
           padding: 0 30px; }
         .degreeInfo-container .main-holder .suggestion-container .suggestion-top .school-text {
-          padding: 0 30px; }
+          padding: 0 30px;
+          font-size: 1.5rem;
+          line-height: 2.1rem;
+          font-weight: 300; }
         .degreeInfo-container .main-holder .suggestion-container .suggestion-top .school-name {
-          font-weight: 600;
+          font-weight: 800;
           color: #CDD73F;
-          padding: 0 30px; }
-        .degreeInfo-container .main-holder .suggestion-container .suggestion-top .suggestion-list {
-          border-top: 1px solid #1d5c34;
-          overflow: auto;
-          flex: 1;
-          padding: 30px 30px 0;
-          margin-top: 30px; }
-          .degreeInfo-container .main-holder .suggestion-container .suggestion-top .suggestion-list .suggestions {
-            color: #fff;
-            font-weight: 600;
-            margin-bottom: 24px;
-            opacity: 0.45;
-            line-height: 1.3em;
-            font-size: 16px;
-            cursor: pointer;
-            text-transform: none;
-            font-family: Open Sans; }
-            .degreeInfo-container .main-holder .suggestion-container .suggestion-top .suggestion-list .suggestions:hover {
-              opacity: 1; }
+          padding: 0 30px;
+          font-size: 1.5rem;
+          line-height: 1.9rem; }
+      .degreeInfo-container .main-holder .suggestion-container .suggestion-list {
+        overflow: auto;
+        flex: 1;
+        padding: 60px 30px 0;
+        background: #093C1C;
+        position: relative; }
+        .degreeInfo-container .main-holder .suggestion-container .suggestion-list:before {
+          content: "";
+          position: absolute;
+          background: #184F2C;
+          width: 40px;
+          height: 40px;
+          top: -20px;
+          transform: rotate(45deg);
+          left: calc(50% - 20px); }
+        .degreeInfo-container .main-holder .suggestion-container .suggestion-list .suggestions {
+          color: #fff;
+          font-weight: 600;
+          margin-bottom: 24px;
+          opacity: 0.45;
+          line-height: 1.3em;
+          font-size: 16px;
+          cursor: pointer;
+          text-transform: none;
+          font-family: Open Sans; }
+          .degreeInfo-container .main-holder .suggestion-container .suggestion-list .suggestions:hover {
+            opacity: 1; }
       .degreeInfo-container .main-holder .suggestion-container .suggestion-bottom {
         padding: 30px; }
 
-summary .title {
-  font-size: 24px;
-  line-height: 65px;
-  text-transform: uppercase;
-  font-weight: 300;
-  font-family: Neue Helvetica; }
-summary .desc {
-  font-weight: 300;
-  color: #333333;
-  font-size: 16px;
-  line-height: 32px;
-  font-family: Open Sans; }
+summary {
+  margin-right: 95px; }
+  summary .title {
+    font-size: 24px;
+    line-height: 65px;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-family: Neue Helvetica; }
+  summary .desc {
+    color: #333333;
+    font-size: 16px;
+    line-height: 32px; }
 
 courses {
   font-family: Neue Helvetica; }
   courses .title {
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 65px;
     text-transform: uppercase;
     font-weight: 300;
@@ -445,18 +465,23 @@ courses {
           transform: rotate(45deg); }
     courses .course-container .flex {
       display: flex;
-      border: 1px solid #DFDDDB; }
+      border: 1px solid #DFDDDB;
+      flex-wrap: wrap; }
       courses .course-container .flex .courses {
-        flex: 1; }
+        flex: 1;
+        min-width: 50%;
+        max-width: 50%; }
         courses .course-container .flex .courses .course .semester-title {
           background: #DFDDDB;
-          color: #878585;
+          color: #000;
           padding: 13px 29px;
           text-transform: uppercase;
           font-family: Open Sans;
           font-weight: bold; }
         courses .course-container .flex .courses .course .semester-course .course-class {
-          padding: 16px 31px; }
+          padding: 16px 31px;
+          background: #fff;
+          font-size: 14px; }
           courses .course-container .flex .courses .course .semester-course .course-class:nth-child(2n+1) {
             background: #EFEEED; }
 

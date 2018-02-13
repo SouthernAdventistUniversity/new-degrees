@@ -1,7 +1,7 @@
 courses
     font-family: Neue Helvetica
     .title
-        font-size: 24px
+        font-size: 1.5rem
         line-height: 65px
         text-transform: uppercase
         font-weight: 300
@@ -38,12 +38,15 @@ courses
         .flex
             display: flex
             border: 1px solid #DFDDDB
+            flex-wrap: wrap
             .courses
                 flex: 1
+                min-width: 50%
+                max-width: 50%
                 .course
                     .semester-title
                         background: #DFDDDB
-                        color: #878585
+                        color: #000
                         padding: 13px 29px
                         text-transform: uppercase
                         font-family: Open Sans
@@ -51,6 +54,8 @@ courses
                     .semester-course
                         .course-class
                             padding: 16px 31px
+                            background: #fff
+                            font-size: 14px
                             &:nth-child(2n+1)
                                 background: #EFEEED
                 

@@ -3,22 +3,28 @@
     top: 0
     right: 0
     height: 100%
-    transform: translateX(100%)
+    transform: translateX(calc(100% + 159px))
     z-index: 99999
     transition: .3s transform ease-out
     display: flex
     justify-content: flex-end
     background: #ffffff
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5)
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.83)
     box-sizing: border-box
     width: 90%
-    overflow: auto
     &.active
         transform: translateX(0)
+    .close
+        position: absolute
+        left: -63px
+        width: 222px
+        top: 20px
+        cursor: pointer
     .info-holder
-        padding: 67px 515px 67px 67px
+        padding: 67px 40% 67px 100px
         overflow: auto
         width: 100%
+        position: relative
     .main-holder
         display: flex
         flex-direction: column
@@ -27,33 +33,33 @@
         height: 100vh
         top: 0
         right: 0
-        width: 400px
+        width: 36%
         .program-title
             background: #FADA63
-            padding: 47px
-            font-size: 32px
+            padding: 11% 18%
+            font-size: 48px
             font-family: Neue Helvetica Condensed
-            line-height: 1em
+            line-height: 1.1em
             font-weight: 300
-            min-width: 300px
+            width: 100%
             b
                 display: block
         .suggestion-container
             flex: 1
             background: #1c5d33
-            width: 90%
+            width: 82%
             overflow: hidden
             position: relative
+            display: flex
+            flex-direction: column
             .suggestion-top
                 background: #184F2C
                 color: #fff
                 font-family: Neue Helvetica
                 text-transform: uppercase
-                padding: 40px 0 0
+                padding: 25px 0
                 line-height: 1em
-                position: absolute
                 overflow: hidden
-                height: 100%
                 display: flex
                 flex-direction: column
                 .school-other
@@ -63,28 +69,42 @@
                     padding: 0 30px
                 .school-text
                     padding: 0 30px
+                    font-size: 1.5rem
+                    line-height: 2.1rem
+                    font-weight: 300
                 .school-name
-                    font-weight: 600
+                    font-weight: 800
                     color: #CDD73F
                     padding: 0 30px
-                .suggestion-list
-                    border-top: 1px solid #1d5c34
-                    overflow: auto
-                    flex: 1
-                    padding: 30px 30px 0
-                    margin-top: 30px
-                    .suggestions
-                        color: #fff
-                        font-weight: 600
-                        margin-bottom: 24px
-                        opacity: .45
-                        line-height: 1.3em
-                        font-size: 16px
-                        cursor: pointer
-                        text-transform: none
-                        font-family: Open Sans
-                        &:hover
-                            opacity: 1
+                    font-size: 1.5rem
+                    line-height: 1.9rem
+            .suggestion-list
+                overflow: auto
+                flex: 1
+                padding: 60px 30px 0
+                background: #093C1C
+                position: relative
+                &:before
+                    content: ""
+                    position: absolute
+                    background: #184F2C
+                    width: 40px
+                    height: 40px
+                    top: -20px
+                    transform: rotate(45deg)
+                    left: calc(50% - 20px)
+                .suggestions
+                    color: #fff
+                    font-weight: 600
+                    margin-bottom: 24px
+                    opacity: .45
+                    line-height: 1.3em
+                    font-size: 16px
+                    cursor: pointer
+                    text-transform: none
+                    font-family: Open Sans
+                    &:hover
+                        opacity: 1
             .suggestion-bottom
                 padding: 30px
                 // .suggestion-list

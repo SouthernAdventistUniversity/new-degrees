@@ -1,4 +1,5 @@
 <div class="degreeInfo-container" ng-class="{active:$root.openDegree}">
+    <img class="close" src="img/degree-close.png" ng-click="$root.openDegree = false" />
     <div class="info-holder">
         <summary summary="summary"></summary>
         <courses courses="courses" year-number="yearNumber"></courses>
@@ -14,10 +15,11 @@
                 <div class="school-other">Other Programs In</div>
                 <div class="school-text">School Of</div>
                 <div class="school-name">{{$ctrl.degreeId.school}}</div>
-                <div class="suggestion-list">
-                    <div class="suggestions" ng-repeat="degree in $root.degree_list | filter: degreeFilter | orderBy: 'degree'" ng-click="openDegree(degree)">{{degree.degree}}</div>
-                </div>
             </div>
+            <div class="suggestion-list">
+                <div class="suggestions" ng-repeat="degree in $root.degree_list | filter: degreeFilter | orderBy: 'degree'" ng-click="openDegree(degree)">{{degree.degree}}</div>
+            </div>
+
             <!-- <div class="suggestion-bottom">
                 <div class="suggestion-filter-container">
 

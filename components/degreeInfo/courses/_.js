@@ -27,7 +27,7 @@
         
         /////////////////////////////
 
-        $scope.orderSemesters = semester => semesterOrder.findIndex(n => n == Object.keys(semester)[0].toLowerCase())
+        //$scope.orderSemesters = semester => semesterOrder.findIndex(n => n == Object.keys(semester)[0].toLowerCase())
 
     }
 })();
