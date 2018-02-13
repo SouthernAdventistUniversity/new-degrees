@@ -138,7 +138,6 @@ body {
       position: relative; }
       .filter-container .input-holder .program-holder .search-container {
         background: #fff;
-        padding: 14px 14px 14px 9px;
         color: #fff;
         text-transform: uppercase;
         font-weight: 700;
@@ -163,8 +162,8 @@ body {
           cursor: pointer;
           position: relative;
           margin: 0;
-          height: 0;
-          padding: 11px; }
+          height: 49px;
+          padding: 14px; }
           .filter-container .input-holder .program-holder .search-container .search-input::placeholder {
             color: #aaa; }
       .filter-container .input-holder .program-holder .program-viewer {
@@ -322,7 +321,7 @@ body {
   .degreeInfo-container.active {
     transform: translateX(0); }
   .degreeInfo-container .info-holder {
-    padding: 67px 367px 67px 67px;
+    padding: 67px 515px 67px 67px;
     overflow: auto;
     width: 100%; }
   .degreeInfo-container .main-holder {
@@ -333,7 +332,7 @@ body {
     height: 100vh;
     top: 0;
     right: 0;
-    width: 300px; }
+    width: 400px; }
     .degreeInfo-container .main-holder .program-title {
       background: #FADA63;
       padding: 47px;
@@ -394,18 +393,18 @@ body {
       .degreeInfo-container .main-holder .suggestion-container .suggestion-bottom {
         padding: 30px; }
 
-summary {
+summary .title {
+  font-size: 24px;
+  line-height: 65px;
+  text-transform: uppercase;
+  font-weight: 300;
   font-family: Neue Helvetica; }
-  summary .title {
-    font-size: 24px;
-    line-height: 65px;
-    text-transform: uppercase;
-    font-weight: 300; }
-  summary .desc {
-    font-weight: 300;
-    color: #333333;
-    font-size: 16px;
-    line-height: 32px; }
+summary .desc {
+  font-weight: 300;
+  color: #333333;
+  font-size: 16px;
+  line-height: 32px;
+  font-family: Open Sans; }
 
 courses {
   font-family: Neue Helvetica; }
