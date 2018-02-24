@@ -1,5 +1,5 @@
 <div class="list-container">
-    <div class="container" ng-repeat="school in schools | orderBy: '+'" ng-hide="!filtered_degrees.length">
+    <div class="container" ng-repeat="school in $root.schools | orderBy: '+'" ng-hide="!filtered_degrees.length">
         <div class="main-title">{{school}}</div>
         <div class="degree" ng-repeat="degree in filtered_degrees = ($root.degree_list | degreeFilter1:school  | orderBy: ['school', 'degree'])"
             ng-click="openDegree(degree)">

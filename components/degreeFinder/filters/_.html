@@ -1,4 +1,5 @@
 <div class="filter-container">
+    <div class="filter-background"  ng-show="isProgramOpen || isSchoolOpen" ng-click="isProgramOpen = false; isSchoolOpen = false"></div>
     <div class="left input-holder">
         <div class="text">Program Level</div>
         <div class="program-holder">
@@ -28,7 +29,7 @@
                     </div>
                     <div class="text">All Schools</div>
                 </div>
-                <div class="program" ng-repeat="area in schools | orderBy: '+'" ng-click="modifyActiveSchools(area)">
+                <div class="program" ng-repeat="area in $root.schools | orderBy: '+'" ng-click="modifyActiveSchools(area)">
                     <div class="square" ng-class="{active:$root.activeSchools.indexOf(area) > -1}">
                     </div>
                     <div class="text">{{area}}</div>
