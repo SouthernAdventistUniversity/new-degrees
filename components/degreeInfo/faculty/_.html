@@ -13,7 +13,11 @@
             />
         </a>
     </div>
-    <div class="faculty-ratio" ng-repeat-end ng-if="$index == 3">
+    <div class="faculty-ratio" ng-repeat-end ng-if="$index == 3 || ($ctrl.faculty.length < 4 && $index == $ctrl.faculty.length - 1)">
+        <div class="ratio">{{$ctrl.ratio}}:1</div>
+        <div class="text">Student to Faculty Ratio</div>
+    </div>
+    <div class="faculty-ratio" ng-if="!$ctrl.faculty.length">
         <div class="ratio">{{$ctrl.ratio}}:1</div>
         <div class="text">Student to Faculty Ratio</div>
     </div>

@@ -76,12 +76,13 @@
         }
 
         const getFaculty = degree => {
-            $scope.faculty = {};
+            $scope.faculty = [];
             $http.get('http://www.southern.edu/api/people-search/' + degree.school + '/prof_by_area').then(res => {
                 let response = res.data;
-                Object.keys(response).forEach(email => response[email].Bio = decodeHtml(response[email].Bio)); 
-                $scope.faculty = response;
-                console.log(response)
+                Object.keys(response).forEach(email => response[email].Bio = decodeHtml(response[email].Bio));
+                Object.keys(response).forEach(staff => $scope.faculty.push(response[staff]))
+                //$scope.faculty = response;
+                console.log($scope.faculty )
             });
         }
 
