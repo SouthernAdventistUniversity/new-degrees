@@ -52,10 +52,12 @@
                     $rootScope.activePrograms.push(program)
                 }
             }
+            if(!$rootScope.activePrograms.length) $rootScope.activePrograms = ["All Programs"]
             console.log($rootScope.activePrograms)
         }
 
         $scope.modifyActiveSchools = school => {
+            console.log(school)
             if (!!$rootScope.activeSchools.find(active => active == school)) {
                 const index = $rootScope.activeSchools.indexOf(school);
                 $rootScope.activeSchools.splice(index, 1);
@@ -69,6 +71,7 @@
                     $rootScope.activeSchools.push(school)
                 }
             }
+            if(!$rootScope.activeSchools.length) $rootScope.activeSchools = ["All Schools"]
             console.log($rootScope.activeSchools)
         }
 
