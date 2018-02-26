@@ -75,15 +75,5 @@
 
         /////////////////////////
 
-        $http.get('//staging.southern.edu/departments').then(e => {
-            const data = e.data,
-                  schools = [];
-            data.forEach(degree => {
-                if (schools.indexOf(degree.school) === -1)
-                    schools.push(degree.school);
-            })
-            $scope.schools = schools;
-        });
-
     }
 })();

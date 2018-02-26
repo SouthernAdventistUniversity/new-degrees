@@ -10,7 +10,6 @@
                 let degree = degrees[index]
                 if (!!$rootScope.activePrograms.find(program => degree.level.includes(program) || program == "All Programs"))
                     if (!!$rootScope.activeSchools.find(item => school == item || item == "All Schools") && degree.school == school)
-                        if (degree.degree.toLowerCase().includes($rootScope.degreeSearch.toLowerCase()))
                             filtered_degrees.push(degree)
             }
             return filtered_degrees
