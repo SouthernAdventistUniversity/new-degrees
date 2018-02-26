@@ -321,7 +321,7 @@ body {
     transform: translateX(0); }
   .degreeInfo-container .close {
     position: absolute;
-    left: -63px;
+    left: -62px;
     width: 222px;
     top: 20px;
     cursor: pointer; }

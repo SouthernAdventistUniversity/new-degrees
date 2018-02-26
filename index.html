@@ -10,26 +10,27 @@
     <link rel="stylesheet" href="globals/compiled.css" />
 </head>
 
-<body ng-app="Degrees" ng-class="{degreeOpen:$root.openDegree}">
+<body >
 
-    <div class="main-page">
-        <main-header></main-header>
-        <degree-finder class="grid-container"></degree-finder>
+        
+    <div ng-app="Degrees" ng-class="{degreeOpen:$root.openDegree}">
+        <div class="main-page">
+            <main-header></main-header>
+            <degree-finder class="grid-container"></degree-finder>
+        </div>
+
+        <div class="background" ng-class="{active:$root.openDegree}" ng-click="$root.openDegree = false" ng-show="$root.openDegree"></div>
+        <degree-info degree-id="$root.activeDegree" ng-if="$root.activeDegree"></degree-info>
+
+        <div class="padding-bottom"></div>
+
+
+
+
     </div>
 
-    <div class="background" ng-class="{active:$root.openDegree}" ng-click="$root.openDegree = false" ng-show="$root.openDegree"></div>
-    <degree-info degree-id="$root.activeDegree" ng-if="$root.activeDegree"></degree-info>
 
-    <div class="padding-bottom"></div>
-
-
-
-
-
-
-
-    <script src="node_modules/angular/angular.js"></script>
-    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="https://d3faecii9yynmo.cloudfront.net/framework/dist/js/angular.all.min.js"></script>
     <script src="globals/app.js"></script>
 
     <script src="components/mainHeader/_.js"></script>
@@ -44,6 +45,19 @@
     <script src="components/degreeInfo/courses/_.js"></script>
     <script src="components/degreeInfo/careers/_.js"></script>
     <script src="components/degreeInfo/faculty/_.js"></script>
+
+
+
+<script>
+        (function(d, t, id) {
+            var js, mmjs = d.getElementsByTagName(t)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(t);
+            js.id = id;            
+            js.src = "//www.southern.edu/app";
+            mmjs.parentNode.insertBefore(js, mmjs);
+        }(document, 'script', 'southern-mmenu'));
+    </script>
 </body>
 
 </html>
