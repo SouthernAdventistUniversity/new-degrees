@@ -19,34 +19,38 @@
 
     ListController.$inject = ['$scope', '$http', '$rootScope', '$timeout'];
     function ListController($scope, $http, $rootScope, $timeout) {
-        $rootScope.degreeSearch = ''
-
+        $rootScope.degreeSearch = '';
+        let empty = false;
 
         ///////////////////////////
         var client = algoliasearch('H1SVP4TWML', '8cb926491f79ad5f094819e1073bdb24');
 
-        $rootScope.$watch('degreeSearch', function () {
+        $rootScope.$watch('degreeSearch', function (current, old) {
             $rootScope.activePrograms = ["All Programs"];
             $rootScope.activeSchools = ["All Schools"];
-            client.initIndex('degrees').search(
-                {
-                    query: $rootScope.degreeSearch,
-                    hitsPerPage: 1000,
-                },
-                function searchDone(err, content) {
-                    console.log(content.hits)
-                    var schools = [];
-                    content.hits.forEach(degree => {
-                        if (schools.indexOf(degree.school) === -1)
-                            schools.push(degree.school);
-                    })
+            if (!empty || current.length < old.length) {
+                client.initIndex('degrees').search(
+                    {
+                        query: $rootScope.degreeSearch,
+                        hitsPerPage: 1000,
+                    },
+                    function searchDone(err, content) {
+                        console.log(content.hits)
+                        empty = false;
+                        var schools = [];
+                        content.hits.forEach(degree => {
+                            if (schools.indexOf(degree.school) === -1)
+                                schools.push(degree.school);
+                        })
 
-                    $timeout(function () {
-                        $rootScope.degree_list = content.hits
-                        $rootScope.schools = schools;
-                    })
-                }
-            );
+                        $timeout(function () {
+                            $rootScope.degree_list = content.hits
+                            $rootScope.schools = schools;
+                        })
+                        empty = !content.hits.length;
+                    }
+                );
+            }
         })
 
 
