@@ -26,7 +26,8 @@
         var client = algoliasearch('H1SVP4TWML', '8cb926491f79ad5f094819e1073bdb24');
 
         $rootScope.$watch('degreeSearch', function () {
-
+            $rootScope.activePrograms = ["All Programs"];
+            $rootScope.activeSchools = ["All Schools"];
             client.initIndex('degrees').search(
                 {
                     query: $rootScope.degreeSearch,
