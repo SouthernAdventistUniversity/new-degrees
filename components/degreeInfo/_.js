@@ -17,10 +17,12 @@
             },
         });
 
-    DegreeInfoController.$inject = ['$scope', '$http', '$rootScope'];
-    function DegreeInfoController($scope, $http, $rootScope) {
+    DegreeInfoController.$inject = ['$scope', '$http', '$rootScope','$timeout'];
+    function DegreeInfoController($scope, $http, $rootScope, $timeout) {
         const $ctrl = this;
         const courseYears = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh']
+
+        const client = algoliasearch('H1SVP4TWML', '8cb926491f79ad5f094819e1073bdb24');
 
         $scope.$watch(() => $ctrl.degreeId, degree => {
             if (degree) {
@@ -77,13 +79,36 @@
 
         const getFaculty = degree => {
             $scope.faculty = [];
-            $http.get('http://www.southern.edu/api/people-search/' + degree.school + '/prof_by_area').then(res => {
-                let response = res.data;
-                Object.keys(response).forEach(email => response[email].Bio = decodeHtml(response[email].Bio));
-                Object.keys(response).forEach(staff => $scope.faculty.push(response[staff]))
-                //$scope.faculty = response;
-                console.log($scope.faculty )
-            });
+
+            client.initIndex('staff').search(
+                {
+                    query: degree.school,
+                    hitsPerPage: 1000,
+                },
+                function searchDone(err, content) {
+                    console.log('staff search', content.hits)
+                    var empty = false;
+                    var staff = [];
+                    content.hits.forEach(employee => {
+                       
+                        staff.push(employee);
+                    })
+
+                    $timeout(function () {
+                        $scope.faculty = staff;
+                    })
+                    empty = !content.hits.length;
+                }
+            );
+
+
+            // $http.get('http://www.southern.edu/api/people-search/' + degree.school + '/prof_by_area').then(res => {
+            //     let response = res.data;
+            //     Object.keys(response).forEach(email => response[email].Bio = decodeHtml(response[email].Bio));
+            //     Object.keys(response).forEach(staff => $scope.faculty.push(response[staff]))
+            //     //$scope.faculty = response;
+            //     console.log($scope.faculty )
+            // });
         }
 
         const getFacultyStudentRatio = degree => {
